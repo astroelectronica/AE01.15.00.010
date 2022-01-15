@@ -1,0 +1,9 @@
+*AE01.15.00.010_sim01.net
+.inc ../AE01.15.00.010.cir
+.step param RHPF 100 1K 200
+.step param CHPF 10n 50n 10n
+.param FC=1/(2*pi*{RHPF}*{CHPF})
+.meas FC_3dB find mag(V(/out)) when frequency=FC
+.ac dec 100 1 100MEG
+.options plotwinsize=0
+.options numdgt=7
